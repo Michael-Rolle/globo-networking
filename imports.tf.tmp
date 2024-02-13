@@ -1,0 +1,48 @@
+##################################################################################
+# IMPORTS
+##################################################################################
+
+import {
+  to = module.main.aws_vpc.this[0]
+  id = "vpc-0cada30bf607df5f7" #VPC
+}
+
+import {
+  to = module.main.aws_subnet.public[0]
+  id = "subnet-01360eb263bf864c5" #PublicSubnet1
+}
+
+import {
+  to = module.main.aws_subnet.public[1]
+  id = "subnet-082ea66bbc0e6e604" #PublicSubnet2
+}
+
+import {
+  to = module.main.aws_internet_gateway.this[0]
+  id = "igw-0b59698bc9c7ebcbc" #InternetGateway
+}
+
+import {
+  to = module.main.aws_route.public_internet_gateway[0]
+  id = "rtb-026d1263d59c75278_0.0.0.0/0" #DefaultPublicRoute
+}
+
+import {
+  to = module.main.aws_route_table.public[0]
+  id = "rtb-026d1263d59c75278" #PublicRouteTable
+}
+
+import {
+  to = module.main.aws_route_table_association.public[0]
+  id = "subnet-01360eb263bf864c5/rtb-026d1263d59c75278" #PublicSubnet1/PublicRouteTable
+}
+
+import {
+  to = module.main.aws_route_table_association.public[1]
+  id = "subnet-082ea66bbc0e6e604/rtb-026d1263d59c75278" #PublicSubnet2/PublicRouteTable
+}
+
+import {
+  to = aws_security_group.ingress
+  id = "sg-04432ee4048f9d81e" #NoIngressSecurityGroup
+}
