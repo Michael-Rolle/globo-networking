@@ -21,6 +21,7 @@ locals {
     Owner       = var.owner
     Terraform   = "true"
     BillingCode = var.billing_code
+    Workspace   = terraform.workspace
   }
 }
 
