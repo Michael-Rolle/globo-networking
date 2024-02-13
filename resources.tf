@@ -18,8 +18,9 @@ data "aws_availability_zones" "available" {}
 locals {
   common_tags = {
     Environment = var.environment
-    owner       = var.owner
-    terraform   = "true"
+    Owner       = var.owner
+    Terraform   = "true"
+    BillingCode = var.billing_code
   }
 }
 
